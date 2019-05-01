@@ -19,9 +19,10 @@ def load_maestro(fname, index=0):
         ct = next(cts)
         start += 1
 
-   struct = Structure()
-   for atom in ct.atom:
-       p_atom = Atom(name=atom.pdbname.strip(), atomic_number=atom.atomic_number)
-       struct.add_atom(p_atom, atom.pdbres.strip(), atom.resnum, chain=atom.chain)
-   struct.coordinats = ct.getXYZ()
-   return struct
+    struct = Structure()
+    for atom in ct.atom:
+        p_atom = Atom(name=atom.pdbname.strip(), atomic_number=atom.atomic_number)
+        struct.add_atom(p_atom, atom.pdbres.strip(), atom.resnum, chain=atom.chain)
+    print(ct.getXYZ())
+    struct.coordinates = ct.getXYZ()
+    return struct
