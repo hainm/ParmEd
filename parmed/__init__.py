@@ -12,7 +12,7 @@ __all__ = ['exceptions', 'periodic_table', 'residue', 'unit', 'utils',
            'Structure', 'StructureView', 'amber', 'charmm', 'namd', 'gromacs',
            'tinker', 'openmm', 'rosetta', 'rdkit', 'formats', 'Vec3', 'ParameterSet',
            'load_file', 'read_PDB', 'read_CIF', 'write_PDB', 'write_CIF',
-           'load_rosetta', 'load_rdkit', 'download_PDB', 'download_CIF', 'tools', 'version']
+           'load_rosetta', 'load_rdkit', 'load_maestro', 'download_pdb', 'download_cif', 'tools', 'version']
 
 from ._version import get_versions
 __version__ = get_versions()['version']
@@ -29,6 +29,7 @@ from parmed.parameters import ParameterSet
 from parmed.rdkit import load_rdkit
 from parmed import rdkit
 from parmed.utils.decorators import deprecated as _deprecated
+from parmed.utils.load_external import load_maestro
 load_file = formats.load_file
 read_PDB = formats.PDBFile.parse
 read_CIF = formats.CIFFile.parse
